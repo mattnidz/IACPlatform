@@ -11,6 +11,7 @@ Required Tools
 * [AWS](https://aws.amazon.com/) - Cloud Provider for Infrastructure
 ```
 
+
 ## Getting Started
 This terraform will build Infrastructure on AWS using terraform. Make sure to supply 
 correct credentials and correct variables in your own `terraform.tfvars` file.
@@ -68,6 +69,7 @@ The App Console External URL should be reliable in the case of one ec2 instance 
 You can test by stopping an ec2 in the AWS ec2 dashboard. 
 If everything works correctly the application located at `http://app-xxxx-console-xxxxx.elb.us-east-1.amazonaws.com:8443` will be loadbalanced and therefore should still reached.
 
+
 ## Upgrades - Next Deployment - Python3 AMI Deployment Script
 
 The Python3 script in this project will change the AMI in the `terraform.tfvars` file for you.
@@ -84,6 +86,16 @@ python deploy.py ami-0394fe9914b475c53 ami-011b3ccf1bd6db744
 Here is the visual dependency graph of Terraform resources according to configuration files.
 
 ![alt text](./graph.png)
+
+
+## Tear Down Infrastructure on AWS
+
+To destroy all resources created.
+
+```
+terraform destroy
+```
+
 
 ## Built With
 
