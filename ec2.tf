@@ -114,7 +114,7 @@ resource "aws_autoscaling_group" "proxy" {
   #count                   = "${length(var.azs)}"
   launch_configuration = "${aws_launch_configuration.proxy.id}"
   #availability_zones = ["${format("%s%s", element(list(var.aws_region), count.index), element(var.azs, count.index))}"]
-  availability_zones   = ["${var.azs}"]
+  #availability_zones   = ["${var.azs}"]
   desired_capacity     = "3"
   min_size = 3
   max_size = 3
