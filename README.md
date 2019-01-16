@@ -29,7 +29,9 @@ Add these:
     * AmazonIAMFullAccess
 
 1. Create a KeyPair, ApiKey in AWS.
-2. Create `terraform.tfvars` file of your own. This file can be used to override default settings. Fill out similar to this with your credentials.
+2. Clone this repo. `git clone https://github.com/mattnidz/IACPlatform.git`
+3. `cd IACPlatform`
+4. Create `terraform.tfvars` file of your own. This file can be used to override default settings. Fill out similar to this with your credentials.
 
 ami = "ami-011b3ccf1bd6db744"
 key_name = ""
