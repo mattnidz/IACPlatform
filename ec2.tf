@@ -82,14 +82,6 @@ write_files:
   permissions: '0755'
   encoding: b64
   content: ${base64encode(file("${path.module}/bootstrap-node.sh"))}
-- path: /opt/app/webserver.py
-  permissions: '0755'
-  encoding: b64
-  content: ${base64encode(file("${path.module}/webserver.py"))}
-- path: /opt/app/index.html
-  permissions: '0755'
-  encoding: b64
-  content: ${base64encode(file("${path.module}/index.html"))}
 runcmd:
 - dos2unix /opt/app/*
 - /opt/app/bootstrap-node.sh
@@ -113,8 +105,6 @@ EOF
 resource "aws_autoscaling_group" "proxy" {
   #count                   = "${length(var.azs)}"
   launch_configuration = "${aws_launch_configuration.proxy.id}"
-  #availability_zones = ["${format("%s%s", element(list(var.aws_region), count.index), element(var.azs, count.index))}"]
-  #availability_zones   = ["${var.azs}"]
   desired_capacity     = "3"
   min_size = 3
   max_size = 3
